@@ -19,6 +19,9 @@ This screencast presents the installation and usage of Onedata Linux client with
 
 ## Screencast Notes
 
+
+
+
 ### All the commands used in the screencast with commentary (testes on Centos 7)
 ~~~
 # check the status of oneprovider

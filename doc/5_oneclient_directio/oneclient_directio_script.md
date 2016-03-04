@@ -1,3 +1,11 @@
+{% slide title="hello" %}
+  {% onscreen %}
+    terminal wih oneclient --help...
+
+  {% script %}
+    Hello everyone i would like...
+{% endslide %}
+
 ## Outline
 > Numbered points guide the video part of the screencast.  
 > The code blocks provide a script for every step.
