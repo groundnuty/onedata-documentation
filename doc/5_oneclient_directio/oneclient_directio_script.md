@@ -1,9 +1,9 @@
-{% slide title="hello" %}
+{% slide title="```hello```" %}
   {% onscreen %}
-    terminal wih oneclient --help...
+    **terminal** __with__ oneclient --help...
 
   {% script %}
-    Hello everyone i would like...
+    ```Hello everyone i would like...```
 {% endslide %}
 
 ## Outline
