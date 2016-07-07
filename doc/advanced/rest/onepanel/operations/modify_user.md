@@ -1,31 +1,32 @@
 
 <a name="modify_user"></a>
-#### Modify user settings
+#### Modify user
 ```
-PUT /user
+PATCH /user
 ```
 
 
 ##### Description
-Modifies user account details. Currently only password modification is allowed.
+Modifies user account details based on information provided in the request body.
 
 
 ##### Parameters
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Body**|**userDetails**  <br>*required*|New user account details.|[UserDetails](../definitions/UserDetails.md#userdetails)|--|
+|**Body**|**data**  <br>*required*|User data.|[User](../definitions/User.md#user)|--|
 
 
 ##### Responses
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**204**|User details updated successfully.|No Content|
+|**204**|User information updated successfully.|No Content|
 |**400**|Invalid request.|[Error](../definitions/Error.md#error)|
-|**403**|Forbidden request.|[Error](../definitions/Error.md#error)|
-|**404**|Onepanel service is not available.|[Error](../definitions/Error.md#error)|
-|**500**|Internal server error.|[Error](../definitions/Error.md#error)|
+|**401**|Authentication error.|[Error](../definitions/Error.md#error)|
+|**403**|Authorization error.|[Error](../definitions/Error.md#error)|
+|**404**|Resource not found.|[Error](../definitions/Error.md#error)|
+|**500**|Internal server Error.|[Error](../definitions/Error.md#error)|
 
 
 ##### Consumes
@@ -46,9 +47,17 @@ json :
 ```
 json :
 {
-  "username" : "onedatauser",
-  "password" : "P@@$$W0RD",
-  "userRole" : "admin"
+  "userId" : "ALKJSDH77i79ASDKJA-ASDBAS9-87",
+  "name" : "Rudolf Lingens",
+  "connectedAccounts" : [ {
+    "accountId" : "ASD879ASD-7SADASFSsa0831",
+    "providerId" : "7YASBFLJ-123ASD870-ASDASD"
+  }, {
+    "accountId" : "QWESsD-7SADASFSsa0831",
+    "providerId" : "7QWEJ-123ASD870-ASDASD"
+  } ],
+  "alias" : "John Doe",
+  "emailList" : [ "rudolf.linges@example.com", "john.doe@example.com" ]
 }
 ```
 
@@ -56,6 +65,16 @@ json :
 ##### Example HTTP response
 
 ###### Response 400
+```
+json :
+{
+  "error" : "invalid_token",
+  "error_description" : "Provided token could not be validated."
+}
+```
+
+
+###### Response 401
 ```
 json :
 {
