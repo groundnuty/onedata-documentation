@@ -307,6 +307,7 @@
       <!--- SWAGGER_INCLUDE_END ONEPROVIDER_PATHS -->
     * [Onepanel](doc/advanced/rest/onepanel/overview.md)
       <!--- SWAGGER_INCLUDE_START ONEPANEL_DEFINITIONS -->
+      * [Definitions](doc/advanced/rest/onepanel/definitions.md)
         * [CEPH](doc/advanced/rest/onepanel/definitions/CEPH.md)
         * [Cluster](doc/advanced/rest/onepanel/definitions/Cluster.md)
         * [Configuration](doc/advanced/rest/onepanel/definitions/Configuration.md)
@@ -345,6 +346,7 @@
         * [UserDetailsUpdate](doc/advanced/rest/onepanel/definitions/UserDetailsUpdate.md)
       <!--- SWAGGER_INCLUDE_END ONEPANEL_DEFINITIONS -->
       <!--- SWAGGER_INCLUDE_START ONEPANEL_PATHS -->
+      * [Definitions](doc/advanced/rest/onezone/definitions.md)
         * [Onepanel](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Get database nodes](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Start/stop database nodes](doc/advanced/rest/onepanel/operations/cluster_databases_start_stop.md)

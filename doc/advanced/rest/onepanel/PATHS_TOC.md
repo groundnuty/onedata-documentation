@@ -1,3 +1,4 @@
+      * [Definitions](doc/advanced/rest/onezone/definitions.md)
         * [Onepanel](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Get database nodes](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Start/stop database nodes](doc/advanced/rest/onepanel/operations/cluster_databases_start_stop.md)

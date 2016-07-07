@@ -1,3 +1,4 @@
+      * [Definitions](doc/advanced/rest/onepanel/definitions.md)
         * [CEPH](doc/advanced/rest/onepanel/definitions/CEPH.md)
         * [Cluster](doc/advanced/rest/onepanel/definitions/Cluster.md)
         * [Configuration](doc/advanced/rest/onepanel/definitions/Configuration.md)
