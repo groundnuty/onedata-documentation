@@ -27,7 +27,8 @@
 * [Advanced topics]()
   * [Overview](doc/advanced/README.md)
   * [REST API](doc/advanced/rest/README.md)
-    * [Onezone](doc/advanced/rest/onezone/overview.md)
+    * [Onezone](doc/advanced/rest/onezone/overview.md)a
+      * [Definitions](doc/advanced/rest/onezone/definitions.md)
       <!--- SWAGGER_INCLUDE_START ONEZONE_DEFINITIONS -->
         * [AuthenticationToken](doc/advanced/rest/onezone/definitions/AuthenticationToken.md)
         * [ClientToken](doc/advanced/rest/onezone/definitions/ClientToken.md)
@@ -60,6 +61,7 @@
         * [SpaceSupportToken](doc/advanced/rest/onezone/definitions/SpaceSupportToken.md)
         * [User](doc/advanced/rest/onezone/definitions/User.md)
       <!--- SWAGGER_INCLUDE_END ONEZONE_DEFINITIONS -->
+      * [Paths](doc/advanced/rest/onezone/paths.md)
       <!--- SWAGGER_INCLUDE_START ONEZONE_PATHS -->
         * [Group](doc/advanced/rest/onezone/operations/create_group.md)
           * [Create new group](doc/advanced/rest/onezone/operations/create_group.md)
@@ -245,6 +247,7 @@
           * [Leave space](doc/advanced/rest/onezone/operations/delete_user_space.md)
       <!--- SWAGGER_INCLUDE_END ONEZONE_PATHS -->
     * [Oneprovider](doc/advanced/rest/oneprovider/overview.md)
+      * [Definitions](doc/advanced/rest/oneprovider/definitions.md)
       <!--- SWAGGER_INCLUDE_START ONEPROVIDER_DEFINITIONS -->
         * [Callback](doc/advanced/rest/oneprovider/definitions/Callback.md)
         * [Error](doc/advanced/rest/oneprovider/definitions/Error.md)
@@ -269,6 +272,7 @@
         * [RRD](doc/advanced/rest/oneprovider/definitions/RRD.md)
         * [Space](doc/advanced/rest/oneprovider/definitions/Space.md)
       <!--- SWAGGER_INCLUDE_END ONEPROVIDER_DEFINITIONS -->
+      * [Operations](doc/advanced/rest/oneprovider/paths.md)
       <!--- SWAGGER_INCLUDE_START ONEPROVIDER_PATHS -->
         * [Data](doc/advanced/rest/oneprovider/operations/get_file_attributes.md)
           * [Get file attributes](doc/advanced/rest/oneprovider/operations/get_file_attributes.md)
@@ -306,8 +310,8 @@
           * [Cancel specific transfer](doc/advanced/rest/oneprovider/operations/cancel_transfer.md)
       <!--- SWAGGER_INCLUDE_END ONEPROVIDER_PATHS -->
     * [Onepanel](doc/advanced/rest/onepanel/overview.md)
-      <!--- SWAGGER_INCLUDE_START ONEPANEL_DEFINITIONS -->
       * [Definitions](doc/advanced/rest/onepanel/definitions.md)
+      <!--- SWAGGER_INCLUDE_START ONEPANEL_DEFINITIONS -->
         * [CEPH](doc/advanced/rest/onepanel/definitions/CEPH.md)
         * [Cluster](doc/advanced/rest/onepanel/definitions/Cluster.md)
         * [Configuration](doc/advanced/rest/onepanel/definitions/Configuration.md)
@@ -345,8 +349,8 @@
         * [UserDetailsResponse](doc/advanced/rest/onepanel/definitions/UserDetailsResponse.md)
         * [UserDetailsUpdate](doc/advanced/rest/onepanel/definitions/UserDetailsUpdate.md)
       <!--- SWAGGER_INCLUDE_END ONEPANEL_DEFINITIONS -->
+      * [Operations](doc/advanced/rest/onepanel/paths.md)
       <!--- SWAGGER_INCLUDE_START ONEPANEL_PATHS -->
-      * [Definitions](doc/advanced/rest/onezone/definitions.md)
         * [Onepanel](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Get database nodes](doc/advanced/rest/onepanel/operations/get_cluster_databases.md)
           * [Start/stop database nodes](doc/advanced/rest/onepanel/operations/cluster_databases_start_stop.md)
