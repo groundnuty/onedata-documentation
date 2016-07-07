@@ -1,34 +1,34 @@
 
-<a name="modify_user"></a>
-#### Modify user settings
+<a name="get_cluster_manager"></a>
+#### Get manager status
 ```
-PUT /user
+GET /cluster/managers/{host}
 ```
 
 
 ##### Description
-Modifies user account details. Currently only password modification is allowed.
+Returns the status of specific cluster manager instance.
 
 
 ##### Parameters
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Body**|**userDetails**  <br>*required*|New user account details.|[UserDetails](../definitions/UserDetails.md#userdetails)|--|
+|**Path**|**host**  <br>*required*|The host name from which the information about the specific Oneprovider cluster manager instance should be returned.|string|--|
 
 
 ##### Responses
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**204**|User details updated successfully.|No Content|
+|**200**|The status of a specific Oneprovider cluster manager node.|[ServiceStatus](../definitions/ServiceStatus.md#servicestatus)|
 |**400**|Invalid request.|[Error](../definitions/Error.md#error)|
 |**403**|Forbidden request.|[Error](../definitions/Error.md#error)|
-|**404**|Onepanel service is not available.|[Error](../definitions/Error.md#error)|
+|**404**|There is no Oneprovider cluster manager instance on this node.|[Error](../definitions/Error.md#error)|
 |**500**|Internal server error.|[Error](../definitions/Error.md#error)|
 
 
-##### Consumes
+##### Produces
 
 * `application/json`
 
@@ -38,22 +38,21 @@ Modifies user account details. Currently only password modification is allowed.
 ###### Request path
 ```
 json :
-"/user"
-```
-
-
-###### Request body
-```
-json :
-{
-  "username" : "onedatauser",
-  "password" : "P@@$$W0RD",
-  "userRole" : "admin"
-}
+"/cluster/managers/string"
 ```
 
 
 ##### Example HTTP response
+
+###### Response 200
+```
+json :
+{
+  "service" : "op_worker",
+  "result" : "ok"
+}
+```
+
 
 ###### Response 400
 ```

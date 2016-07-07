@@ -1,36 +1,32 @@
 
-<a name="modify_user"></a>
-#### Modify user settings
+<a name="cluster_database_start_stop"></a>
+#### Start/stop database node.
 ```
-PUT /user
+PATCH /cluster/databases/{host}
 ```
 
 
 ##### Description
-Modifies user account details. Currently only password modification is allowed.
+Starts or stops entire Oneprovider deployment in the local site.
 
 
 ##### Parameters
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Body**|**userDetails**  <br>*required*|New user account details.|[UserDetails](../definitions/UserDetails.md#userdetails)|--|
+|**Path**|**host**  <br>*required*|The host name where database is running.|string|--|
+|**Query**|**started**  <br>*optional*|This flag changes the intended state of the database instance. <br><br>If the state is changed, the service will be stopped or started in order to match the requested state.|boolean|--|
 
 
 ##### Responses
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**204**|User details updated successfully.|No Content|
+|**204**|Database state changed successfully.|No Content|
 |**400**|Invalid request.|[Error](../definitions/Error.md#error)|
 |**403**|Forbidden request.|[Error](../definitions/Error.md#error)|
-|**404**|Onepanel service is not available.|[Error](../definitions/Error.md#error)|
+|**404**|Oneprovider service configuration is not available.|[Error](../definitions/Error.md#error)|
 |**500**|Internal server error.|[Error](../definitions/Error.md#error)|
-
-
-##### Consumes
-
-* `application/json`
 
 
 ##### Example HTTP request
@@ -38,17 +34,15 @@ Modifies user account details. Currently only password modification is allowed.
 ###### Request path
 ```
 json :
-"/user"
+"/cluster/databases/string"
 ```
 
 
-###### Request body
+###### Request query
 ```
 json :
 {
-  "username" : "onedatauser",
-  "password" : "P@@$$W0RD",
-  "userRole" : "admin"
+  "started" : true
 }
 ```
 

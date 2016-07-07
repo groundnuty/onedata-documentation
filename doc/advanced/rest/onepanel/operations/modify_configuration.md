@@ -1,27 +1,28 @@
 
-<a name="modify_user"></a>
-#### Modify user settings
+<a name="modify_configuration"></a>
+#### Update configuration
 ```
-PUT /user
+PUT /configuration
 ```
 
 
 ##### Description
-Modifies user account details. Currently only password modification is allowed.
+Updates the current configuration of Onedata service deployment. Depending on the type of service
+managed by the Onepanel, it accepts either Onezone or Oneprovider configuration description.
 
 
 ##### Parameters
 
 |Type|Name|Description|Schema|Default|
 |---|---|---|---|---|
-|**Body**|**userDetails**  <br>*required*|New user account details.|[UserDetails](../definitions/UserDetails.md#userdetails)|--|
+|**Body**|**configuration**  <br>*required*|New deployment configuration.|[Configuration](../definitions/Configuration.md#configuration)|--|
 
 
 ##### Responses
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**204**|User details updated successfully.|No Content|
+|**204**|Onedata service configuration updated successfully.|No Content|
 |**400**|Invalid request.|[Error](../definitions/Error.md#error)|
 |**403**|Forbidden request.|[Error](../definitions/Error.md#error)|
 |**404**|Onepanel service is not available.|[Error](../definitions/Error.md#error)|
@@ -30,7 +31,7 @@ Modifies user account details. Currently only password modification is allowed.
 
 ##### Consumes
 
-* `application/json`
+* `application/x-yaml`
 
 
 ##### Example HTTP request
@@ -38,7 +39,7 @@ Modifies user account details. Currently only password modification is allowed.
 ###### Request path
 ```
 json :
-"/user"
+"/configuration"
 ```
 
 
@@ -46,9 +47,16 @@ json :
 ```
 json :
 {
-  "username" : "onedatauser",
-  "password" : "P@@$$W0RD",
-  "userRole" : "admin"
+  "cluster" : {
+    "type" : "string",
+    "domainName" : "string",
+    "nodes" : {
+      "string" : "object"
+    },
+    "managers" : "object",
+    "workers" : "object",
+    "databases" : "object"
+  }
 }
 ```
 

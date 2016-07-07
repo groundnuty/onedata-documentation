@@ -1,63 +1,45 @@
-# Onezone
+# Onepanel
 
 
 <a name="overview"></a>
 ## Overview
-This is the RESTful API definition of Onezone component of Onedata data management system [http://www.onedata.org].
+This is the RESTful API definition of Onepanel component of Onedata data management system [http://www.onedata.org].
 
-This API allows control and configuration of local Onezone service deployment, in particular management
-of users, spaces, groups and providers.
+This API allows control and configuration of local Onedata deployment, in particular full control over the Onezone and Oneprovider services and their distribution on the local resources. 
 
-## Authentication
-In order to be able to use this API the REST client must be able to authenticate with the Onezone service.
+Onezone and Oneprovider services is composed of 3 types of processes: managers, databases and workers. 
 
-Currently this is supported through access token which can be generate using the Onedata user interface. 
-The token must be added to the request header:
+Each of these processes can be added on specified host in the local site using this API. 
+
+The overall configuration can be controlled by updating 'onezone/configuration' and
+'oneprovider/configuration' resources.
+ All paths listed below are relative to the base Onedata REST API which is `/api/v3/`, so complete URL for a request to Onepanel service is:
+ 
+ ```
+ http://HOSTNAME:PORT/api/v3/onepanel/...
+ ```
+
+ ## Authentication
+ In order to be able to use this API the REST client must be able to authenticate with the Onezone service.
+
+ Currently this is supported through access token which can be generate using the Onedata user interface. 
+ The token must be added to the request header:
  ```
  macaroon: IAUYCGOUASGDJHASDJKVAHSDJHASDKJHABSDKJHBASKJHDBKJHASBDKJHBASDKJHBASD...
  ```
 
-In addition please take into account, that depending on your account authorization rights, not all operations
-may be possible. In particular, some operations depend on whether a particular request is initiated by a regular
-user or by another storage provider within a zone.
+ ## API structure
+ This API allows the management of 2 Onedata services, Onezone and Oneprovider, in terms of their distribution in the local site.
+ The API allows management of all these components as well as monitoring their current status.
 
-In case of Oneprovider API calls, the provider identification and authorization are based on
-the SSL Peer Certificate that has been signed by this Onezone service during registration.
-
-## Effective users and effective groups
-Onedata supports creation of arbitrary nested group tree structures. In order to allow identification
-if a given user belongs to the group directly or indirectly by belonging to a subgroup of a group,
-separate API calls are provided for getting information about group users (direct group members) and 
-effective users (indirect group members).
-
-## API structure
-Most operations are RESTful, i.e. paths reflect the actual resource mode and operations on them are mapped to
-most appropriate HTTP methods.
-
-
-### Space management
-The space management operations of this API provide means for accessing information about spaces 
-and their management.
-
-### Group management
-The group management operations allow for creation of user groups, assigning their authorization rights,
-adding and removing users from groups.
-
-### User management
-The user management methods enable for creation of users, managing their authorization
-credentials as well as space and group membership.
-
-### Provider management
-Provider specific calls enable for getting global information about the spaces managed by the provider,
-and some administrative operations which can be used for monitoring or accounting.
-
-### Privileges management
-Onezone allows any user to have selected administration privileges for the Onezone service itself,
-enabling them to view and configure certain aspects of the system.
+ Each of these services is composed of the following components:
+   * **Worker processes** - `oz_worker` for Onezone and `op_worker` for Oneprovider, these are available under `/cluster/workers` paths,
+   * **Databases instances** - each Onedata service stores it's metadata in a Couchbase backend which can be distributed on any number of nodes, these are available under `/cluster/databases` paths
+   * **Cluster manager** - this is a process which controls other deployed processes in one site, these are availables under these are available under `/cluster/managers` paths
 
 
 ### Version information
-*Version* : 3.0.0-beta7
+*Version* : 3.0.0-beta6
 
 
 ### Contact information
@@ -71,16 +53,12 @@ enabling them to view and configure certain aspects of the system.
 
 
 ### URI scheme
-*BasePath* : /api/v3/onezone
+*BasePath* : /api/v3/onepanel
 
 
 ### Tags
 
-* Space : Space related operations
-* Group : Group related operations
-* User : User related operations
-* Provider : Provider related operations
-* Privileges : Operations on Onezone privileges
+* Onepanel : Onepanel API methods
 
 
 

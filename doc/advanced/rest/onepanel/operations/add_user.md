@@ -1,13 +1,13 @@
 
-<a name="modify_user"></a>
-#### Modify user settings
+<a name="add_user"></a>
+#### Add user
 ```
-PUT /user
+POST /user
 ```
 
 
 ##### Description
-Modifies user account details. Currently only password modification is allowed.
+Creates new Onepanel user account.
 
 
 ##### Parameters
@@ -21,7 +21,7 @@ Modifies user account details. Currently only password modification is allowed.
 
 |HTTP Code|Description|Schema|
 |---|---|---|
-|**204**|User details updated successfully.|No Content|
+|**204**|User created successfully.|No Content|
 |**400**|Invalid request.|[Error](../definitions/Error.md#error)|
 |**403**|Forbidden request.|[Error](../definitions/Error.md#error)|
 |**404**|Onepanel service is not available.|[Error](../definitions/Error.md#error)|

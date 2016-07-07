@@ -6,8 +6,8 @@ Generic error model for REST requests.
 
 |Name|Description|Schema|
 |---|---|---|
-|**error**  <br>*optional*|Identifier representing internal error code.|string|
-|**error_description**  <br>*optional*|Detailed error message.|string|
+|**error**  <br>*required*|Identifier representing internal error code.|string|
+|**error_description**  <br>*required*|Detailed error message.|string|
 
 **Example**
 ```
