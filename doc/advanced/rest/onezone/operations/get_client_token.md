@@ -7,9 +7,21 @@ GET /user/client_token
 
 
 ##### Description
-Creates a user authorization token that can be used in `oneclient` command line or via REST API.
+Creates a user access token that can be used in `oneclient` command 
+line tool or via REST API.
 
-This operation can be invoked on behalf of current user only.
+This operation can be invoked on behalf of currently authenticated user only.
+
+***Example cURL requests***
+
+**Add user to space**
+```bash
+curl -k -u username:password -X GET https://$HOST:8443/api/v3/onezone/user/client_token
+
+{
+  "token": "LKHKJASDkkajsdnKJASDkjasDJASDjkasACJNS2KJNAS"
+}
+```
 
 
 ##### Responses

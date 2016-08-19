@@ -1,27 +1,25 @@
 
 <a name="delete_provider"></a>
-#### Unregisters provider
+#### Unregister provider
 ```
 DELETE /provider
 ```
 
 
 ##### Description
-Unregisters a Oneprovider from the nezone service.
+Allows Oneprovider service to unregister from Onezone.
 
+This operation allows a Oneprovider to unregister from a this Onezone, i.e. it can only be invoked
+by Oneprovider which wants to unregister. It does't require any parameters, as the provider is
+identified by the peer certificate used for this connection.
 
-##### Parameters
+***Example cURL requests***
 
-|Type|Name|Description|Schema|Default|
-|---|---|---|---|---|
-|**Body**|**data**  <br>*required*|Provider ID.|[data](#delete_provider-data)|--|
-
-<a name="delete_provider-data"></a>
-**data**
-
-|Name|Description|Schema|
-|---|---|---|
-|**providerId**  <br>*optional*|The ID of the provider to unregister.|string|
+**Update provider geo location**
+```bash
+curl -k --cert ./etc/op_worker/certs/grpcert.pem -X DELETE  \
+https://$HOST:8443/api/v3/onezone/provider
+```
 
 
 ##### Responses
@@ -47,15 +45,6 @@ Unregisters a Oneprovider from the nezone service.
 ```
 json :
 "/provider"
-```
-
-
-###### Request body
-```
-json :
-{
-  "providerId" : "string"
-}
 ```
 
 

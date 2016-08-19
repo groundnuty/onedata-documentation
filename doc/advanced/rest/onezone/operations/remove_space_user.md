@@ -9,7 +9,16 @@ DELETE /spaces/{id}/users/{uid}
 ##### Description
 Removes user from specific space.
 
-This operation requires `space_remove_user` privilege.
+This operation requires `space_remove_user` or 
+`remove_member_from_space` privilege.
+
+***Example cURL requests***
+
+**Get space user data**
+```bash
+curl -k  -u admin:password -X DELETE \
+https://$HOST:8443/api/v3/onezone/spaces/p-mts_OBjwXss-E9kBxzp-ux12KNW2CBSaXlkDowDEk/users/ivMnRLb2WYNApEmP-j3SF0NsqBgdHG7iel89FHY802w
+```
 
 
 ##### Parameters
