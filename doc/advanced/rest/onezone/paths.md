@@ -14,15 +14,15 @@ Group related operations
 |[/groups/{id}](operations/remove_group.md)|DELETE|Remove group|
 |[/groups/{id}](operations/modify_group.md)|PATCH|Modify group details|
 |[/groups/{id}/effective_users](operations/get_group_effective_users.md)|GET|Get effective group users|
-|[/groups/{id}/effective_users/{uid}](operations/get_groups_effective_user.md)|GET|Get group user details|
+|[/groups/{id}/effective_users/{uid}](operations/get_groups_effective_user.md)|GET|Get group effective user details|
 |[/groups/{id}/effective_users/{uid}/privileges](operations/get_groups_user_privileges.md)|GET|Get user group privileges|
 |[/groups/{id}/nested](operations/get_nested_groups.md)|GET|Get subgroups|
 |[/groups/{id}/nested/join](operations/join_nested_group.md)|POST|Add subgroup|
 |[/groups/{id}/nested/token](operations/get_nested_group_token.md)|GET|Create subgroup invitation token|
 |[/groups/{id}/nested/{nid}](operations/get_nested_group.md)|GET|Get subgroup details|
-|[/groups/{id}/nested/{nid}](operations/delete_nested_group.md)|DELETE|Remove subgroup.|
+|[/groups/{id}/nested/{nid}](operations/delete_nested_group.md)|DELETE|Remove subgroup|
 |[/groups/{id}/nested/{nid}/privileges](operations/get_nested_group_privileges.md)|GET|Get subgroup privileges|
-|[/groups/{id}/nested/{nid}/privileges](operations/set_group_nested_privileges.md)|PUT|Set subgroup privileges.|
+|[/groups/{id}/nested/{nid}/privileges](operations/set_group_nested_privileges.md)|PUT|Set subgroup privileges|
 |[/groups/{id}/parent](operations/get_parent_groups.md)|GET|Get parent groups|
 |[/groups/{id}/parent/{pid}](operations/get_parent_group.md)|GET|Get parent group details|
 |[/groups/{id}/spaces](operations/create_space_for_group.md)|POST|Creates new space for group|
@@ -47,11 +47,11 @@ Operations on Onezone privileges
 |Path|Method|Description|
 |---|---|---|
 |[/privileges/group/{id}](operations/get_group_onezone_privileges.md)|GET|Get group's Onezone privileges|
-|[/privileges/group/{id}](operations/set_group_onezone_privileges.md)|PUT|Set group's Onezone privileges|
 |[/privileges/group/{id}](operations/remove_group_onezone_privileges.md)|DELETE|Remove group's Onezone privileges|
+|[/privileges/group/{id}](operations/set_group_onezone_privileges.md)|PATCH|Set group's Onezone privileges|
 |[/privileges/users/{id}](operations/get_user_onezone_privileges.md)|GET|Get user's Onezone privileges|
-|[/privileges/users/{id}](operations/set_user_onezone_privileges.md)|PUT|Set user's Onezone privileges|
 |[/privileges/users/{id}](operations/remove_user_onezone_privileges.md)|DELETE|Remove user's Onezone privileges|
+|[/privileges/users/{id}](operations/set_user_onezone_privileges.md)|PATCH|Set user's Onezone privileges|
 
 
 <a name="provider_resource"></a>
@@ -92,7 +92,7 @@ Space related operations
 |[/spaces/{id}/groups](operations/add_group_to_space.md)|PUT|Add group to space|
 |[/spaces/{id}/groups/token](operations/get_space_group_token.md)|GET|Create space invite token for group|
 |[/spaces/{id}/groups/{gid}](operations/get_space_group.md)|GET|Get group details|
-|[/spaces/{id}/groups/{gid}](operations/delete_space_group.md)|DELETE|Remove subgroup|
+|[/spaces/{id}/groups/{gid}](operations/delete_space_group.md)|DELETE|Remove group from space|
 |[/spaces/{id}/groups/{gid}/privileges](operations/get_space_group_privileges.md)|GET|Get group privileges to space|
 |[/spaces/{id}/groups/{gid}/privileges](operations/set_space_group_privileges.md)|PUT|Set group privileges to space|
 |[/spaces/{id}/providers](operations/get_space_providers.md)|GET|Get space providers|
@@ -125,8 +125,8 @@ User related operations
 |[/user/groups/join](operations/join_group.md)|POST|Join group|
 |[/user/groups/{gid}](operations/get_user_group.md)|GET|Get group details|
 |[/user/groups/{gid}](operations/leave_group.md)|DELETE|Leave group|
-|[/user/spaces](operations/create_user_space.md)|POST|Create a new space|
-|[/user/spaces](operations/get_user_spaces.md)|GET|Get list of spaces|
+|[/user/spaces](operations/create_user_space.md)|POST|Create new user space|
+|[/user/spaces](operations/get_user_spaces.md)|GET|Get user spaces|
 |[/user/spaces/default](operations/get_user_default_space.md)|GET|Get default space|
 |[/user/spaces/default](operations/set_user_default_space.md)|PUT|Set default space|
 |[/user/spaces/join](operations/join_space.md)|POST|Join space|
